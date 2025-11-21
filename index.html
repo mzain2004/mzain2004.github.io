@@ -1,0 +1,1966 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Optimization -->
+    <title>Muhammad Zain | Cloud Engineering Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Muhammad Zain, a Cyber Security undergraduate and Cloud Engineering learner at Air University Multan. Specializing in secure web development, AWS/GCP cloud technologies, and frontend engineering."
+    />
+    <meta
+      name="keywords"
+      content="Cyber Security Student Pakistan, Cloud Engineering Learner, Web Developer Portfolio, Air University Multan Cyber Security, HTML CSS JavaScript Projects, API Integration Projects, PHP CRUD Portfolio, Cloud Computing Beginner, Cybersecurity Undergraduate Projects, Muhammad Zain"
+    />
+    <meta name="author" content="Muhammad Zain" />
+
+    <!-- Open Graph / Social Media -->
+    <meta
+      property="og:title"
+      content="Muhammad Zain | Cyber Security & Cloud Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Exploring security, building modern web experiences, and learning cloud technologies. View my projects and certifications."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mzain2004.com" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Vanilla Tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="data.js"></script> <!-- Load Data Store -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'bg-deep': '#1e2a38',
+              'bg-slate': '#2a2f36',
+              'text-cloud': '#f5f7fa',
+              'accent-cyan': '#8fe3ff',
+              'accent-orange': '#ff9900',
+            },
+            fontFamily: {
+              inter: ['Inter', 'sans-serif'],
+              'space-grotesk': ['Space Grotesk', 'sans-serif'],
+            },
+            keyframes: {
+              'pulse-slow': {
+                '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+                '50%': { opacity: '0.5', transform: 'scale(1.1)' },
+              },
+              slideDown: {
+                from: { transform: 'translateY(-100%)', opacity: '0' },
+                to: { transform: 'translateY(0)', opacity: '1' },
+              },
+              blink: {
+                '50%': { opacity: '0' },
+              },
+              'bounce-custom': {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              'glitch-anim': {
+                '0%': { transform: 'translate(0)' },
+                '20%': { transform: 'translate(-2px, 2px)' },
+                '40%': { transform: 'translate(-2px, -2px)' },
+                '60%': { transform: 'translate(2px, 2px)' },
+                '80%': { transform: 'translate(2px, -2px)' },
+                '100%': { transform: 'translate(0)' },
+              },
+              'pulse-border': {
+                '0%': { boxShadow: '0 0 10px rgba(143, 227, 255, 0.2), inset 0 0 10px rgba(143, 227, 255, 0.1)', borderColor: 'rgba(143, 227, 255, 0.3)' },
+                '50%': { boxShadow: '0 0 25px rgba(143, 227, 255, 0.5), inset 0 0 15px rgba(143, 227, 255, 0.2)', borderColor: 'rgba(143, 227, 255, 0.8)' },
+                '100%': { boxShadow: '0 0 10px rgba(143, 227, 255, 0.2), inset 0 0 10px rgba(143, 227, 255, 0.1)', borderColor: 'rgba(143, 227, 255, 0.3)' },
+              },
+            },
+            animation: {
+              'pulse-slow': 'pulse-slow 8s infinite alternate',
+              slideDown: 'slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              blink: 'blink 1s step-start infinite',
+              'bounce-custom': 'bounce-custom 1s ease-in-out 3',
+              'glitch-anim': 'glitch-anim 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite',
+              'pulse-border': 'pulse-border 3s infinite',
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Zain",
+        "url": "https://mzain2004.com",
+        "jobTitle": "Cyber Security Student & Web Developer",
+        "alumniOf": "Air University Multan Campus",
+        "sameAs": [
+          "https://github.com/mzain2004",
+          "https://linkedin.com/in/muhammadzain2004"
+        ],
+        "knowsAbout": [
+          "Cyber Security",
+          "Cloud Computing",
+          "Web Development",
+          "JavaScript",
+          "PHP",
+          "AWS",
+          "Google Cloud"
+        ]
+      }
+    </script>
+
+    <style>
+      :root {
+        --bg-deep: #1e2a38;
+        --bg-slate: #2a2f36;
+        --text-cloud: #f5f7fa;
+        --accent-cyan: #8fe3ff;
+        --accent-orange: #ff9900;
+        --accent-orange-gradient: linear-gradient(
+          135deg,
+          #ff9900 0%,
+          #ffb84d 100%
+        );
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-deep);
+        color: var(--text-cloud);
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      /* Glassmorphism */
+      .glass-panel {
+        background: rgba(42, 47, 54, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(143, 227, 255, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .glass-nav {
+        background: rgba(30, 42, 56, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        will-change: background-color, backdrop-filter;
+        transition: all 0.2s ease-out;
+      }
+
+      /* Custom Gradients */
+      .text-gradient-primary {
+        background: linear-gradient(135deg, #f5f7fa 0%, #8fe3ff 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .text-gradient-accent {
+        background: linear-gradient(135deg, #8fe3ff 0%, #ff9900 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Animations */
+      .glow-blob {
+        position: absolute;
+        filter: blur(90px);
+        z-index: -1;
+        opacity: 0.4;
+        animation: pulse-slow 8s infinite alternate;
+      }
+
+      @keyframes pulse-slow {
+        0% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0.5;
+          transform: scale(1.1);
+        }
+      }
+
+      .hover-3d {
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        will-change: box-shadow, border-color;
+      }
+
+      .hover-3d:hover {
+        box-shadow: 0 15px 30px -10px rgba(143, 227, 255, 0.15);
+        border-color: rgba(143, 227, 255, 0.3);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px) translateZ(0);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+      }
+
+      /* Staggered Animation Delays */
+      .delay-100 {
+        transition-delay: 100ms;
+      }
+      .delay-200 {
+        transition-delay: 200ms;
+      }
+      .delay-300 {
+        transition-delay: 300ms;
+      }
+      .delay-400 {
+        transition-delay: 400ms;
+      }
+      .delay-500 {
+        transition-delay: 500ms;
+      }
+
+      /* Navbar Animation */
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .nav-animate {
+        animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .neon-line {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--accent-cyan),
+          transparent
+        );
+        opacity: 0.5;
+      }
+
+      /* Hacker Mode Variables */
+      body.hacker-mode {
+        --bg-deep: #000000;
+        --bg-slate: #0a0a0a;
+        --text-cloud: #00ff41;
+        --accent-cyan: #008f11;
+        --accent-orange: #00ff41;
+        --accent-orange-gradient: linear-gradient(135deg, #00ff41 0%, #008f11 100%);
+        font-family: "Courier New", monospace;
+      }
+
+      body.hacker-mode .glass-panel,
+      body.hacker-mode .glass-nav {
+        background: rgba(0, 20, 0, 0.9);
+        border-color: #00ff41;
+        box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+      }
+
+      body.hacker-mode .text-gradient-primary,
+      body.hacker-mode .text-gradient-accent,
+      body.hacker-mode h1, body.hacker-mode h2, body.hacker-mode h3 {
+        background: none;
+        -webkit-text-fill-color: #00ff41;
+        color: #00ff41;
+        text-shadow: 0 0 5px #00ff41;
+        font-family: "Courier New", monospace;
+      }
+
+      body.hacker-mode .glow-blob {
+        background: #00ff41 !important;
+        opacity: 0.1;
+      }
+
+      /* Holographic Tilt Effect */
+      .holo-card {
+        transform-style: preserve-3d;
+      }
+      
+      .holo-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          125deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.1) 30%,
+          rgba(255, 255, 255, 0.0) 40%,
+          transparent 100%
+        );
+        transform: translateZ(20px);
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        border-radius: inherit;
+      }
+
+      .holo-card:hover::before {
+        opacity: 1;
+      }
+
+      /* Modal Styles */
+      .modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(8px);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal-backdrop.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .modal-content {
+        background: #1e2a38;
+        border: 1px solid #8fe3ff;
+        box-shadow: 0 0 50px rgba(143, 227, 255, 0.2);
+        transform: scale(0.9);
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .modal-backdrop.active .modal-content {
+        transform: scale(1);
+      }
+      
+      body.hacker-mode .modal-content {
+          background: #000;
+          border-color: #00ff41;
+          box-shadow: 0 0 50px rgba(0, 255, 65, 0.3);
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: rgba(30, 42, 56, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(143, 227, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #8fe3ff;
+        font-size: 1.2rem;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        z-index: 99;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .scroll-to-top.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .scroll-to-top:hover {
+        background: var(--accent-orange-gradient);
+        color: #1e2a38;
+        transform: translateY(-5px);
+        box-shadow: 0 0 30px rgba(255, 153, 0, 0.4);
+        border-color: transparent;
+      }
+
+      /* Active Nav Link - Pill Style */
+      .nav-link {
+        position: relative;
+        transition: all 0.3s ease;
+        border-radius: 9999px; /* Pill shape */
+      }
+
+      .nav-link:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+      }
+
+      .nav-link.active-nav {
+        background: rgba(143, 227, 255, 0.1);
+        color: #8FE3FF;
+        box-shadow: 0 0 15px rgba(143, 227, 255, 0.15);
+        font-weight: 600;
+      }
+
+      /* Typing Cursor */
+      .typing-cursor::after {
+        content: "|";
+        animation: blink 1s step-start infinite;
+        color: var(--accent-orange);
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* Particles Container */
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        pointer-events: none; /* Allow clicks to pass through */
+      }
+
+      /* Bounce Animation */
+      @keyframes bounce-custom {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .bounce-on-reveal {
+        animation: bounce-custom 1s ease-in-out 3; /* Bounce 3 times */
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e2a38;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ff9900;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ffb84d;
+      }
+
+      /* Glitch Effect */
+      .glitch-wrapper {
+        display: inline-block;
+        position: relative;
+      }
+      .glitch-effect:hover {
+        animation: glitch-anim 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+          infinite;
+        color: #ff9900;
+      }
+      @keyframes glitch-anim {
+        0% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(-2px, 2px);
+        }
+        40% {
+          transform: translate(-2px, -2px);
+        }
+        60% {
+          transform: translate(2px, 2px);
+        }
+        80% {
+          transform: translate(2px, -2px);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
+
+      /* Neon Border Animation */
+      @keyframes pulse-border {
+        0% {
+          box-shadow: 0 0 10px rgba(143, 227, 255, 0.2),
+            inset 0 0 10px rgba(143, 227, 255, 0.1);
+          border-color: rgba(143, 227, 255, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 25px rgba(143, 227, 255, 0.5),
+            inset 0 0 15px rgba(143, 227, 255, 0.2);
+          border-color: rgba(143, 227, 255, 0.8);
+        }
+        100% {
+          box-shadow: 0 0 10px rgba(143, 227, 255, 0.2),
+            inset 0 0 10px rgba(143, 227, 255, 0.1);
+          border-color: rgba(143, 227, 255, 0.3);
+        }
+      }
+
+      .neon-border {
+        animation: pulse-border 3s infinite;
+      }
+
+      /* Scroll Progress Bar */
+      #scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #8fe3ff, #ff9900);
+        z-index: 9999;
+        width: 0%;
+        transition: width 0.1s;
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-[#FF9900] selection:text-[#1E2A38]">
+    <div id="scroll-progress"></div>
+    <div id="particles-js"></div>
+    <!-- Ambient Background Glows -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+      <div
+        class="glow-blob bg-[#1E2A38] w-[800px] h-[800px] rounded-full top-[-200px] left-[-200px]"
+      ></div>
+      <div
+        class="glow-blob bg-[#8FE3FF] w-[400px] h-[400px] rounded-full top-[20%] right-[-100px] opacity-10"
+      ></div>
+      <div
+        class="glow-blob bg-[#FF9900] w-[300px] h-[300px] rounded-full bottom-[-50px] left-[20%] opacity-10"
+      ></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full z-50 glass-nav transition-all duration-300 nav-animate"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex-shrink-0 flex items-center">
+            <a
+              href="#"
+              class="text-2xl font-bold tracking-tighter font-['Space_Grotesk'] text-white"
+            >
+              MZ<span class="text-[#FF9900]">.</span>
+            </a>
+          </div>
+            <div class="ml-10 flex items-baseline space-x-2">
+              <a
+                href="#about"
+                class="nav-link text-gray-300 px-4 py-2 text-sm font-medium"
+                >About</a
+              >
+              <a
+                href="#skills"
+                class="nav-link text-gray-300 px-4 py-2 text-sm font-medium"
+                >Skills</a
+              >
+              <a
+                href="#projects"
+                class="nav-link text-gray-300 px-4 py-2 text-sm font-medium"
+                >Projects</a
+              >
+              <a
+                href="#experience"
+                class="nav-link text-gray-300 px-4 py-2 text-sm font-medium"
+                >Experience</a
+              >
+              <a
+                href="#stats"
+                class="nav-link text-gray-300 px-4 py-2 text-sm font-medium"
+                >Stats</a
+              >
+              <button
+                id="theme-toggle"
+                class="text-gray-300 hover:text-[#00FF41] transition-colors px-3 py-2"
+                title="Toggle Hacker Mode"
+              >
+                <i class="fas fa-terminal"></i>
+              </button>
+              <a
+                href="#contact"
+                class="ml-4 bg-gradient-to-r from-[#8FE3FF]/20 to-[#FF9900]/20 border border-[#8FE3FF]/30 hover:border-[#8FE3FF] text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:shadow-[0_0_15px_rgba(143,227,255,0.2)]"
+                >Contact Me</a
+              >
+            </div>
+          </div>
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="text-gray-300 hover:text-white focus:outline-none"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden glass-panel absolute w-full border-t border-gray-700/50 transition-all duration-300 opacity-0 -translate-y-5 pointer-events-none"
+      >
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#about"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Projects</a
+          >
+          <a
+            href="#experience"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Experience</a
+          >
+          <a
+            href="#stats"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Stats</a
+          >
+          <a
+            href="#contact"
+            class="text-[#FF9900] block px-3 py-2 rounded-md text-base font-medium"
+            >Contact Me</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col-reverse lg:flex-row items-center gap-16">
+          <div class="w-full lg:w-3/5 text-center lg:text-left reveal active">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2A2F36]/50 border border-[#8FE3FF]/20 mb-6"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-[#FF9900] animate-pulse"
+              ></span>
+              <span
+                class="text-xs font-medium text-[#8FE3FF] tracking-wide uppercase"
+                >Currently Learning: AWS Solutions Architect</span
+              >
+            </div>
+
+            <h1
+              class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight mb-6 text-white leading-tight"
+            >
+              Hi, I'm
+              <span class="glitch-wrapper">
+                <span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-[#F5F7FA] to-[#8FE3FF] glitch-effect cursor-pointer"
+                  data-text="Muhammad Zain"
+                  >Muhammad Zain</span
+                >
+              </span>
+            </h1>
+
+            <h2
+              class="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#FF9900] to-[#FFB84D] font-['Space_Grotesk'] min-h-[40px]"
+            >
+              <span id="typing-text" class="typing-cursor"></span>
+            </h2>
+
+            <p
+              class="text-gray-300 text-lg mb-6 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+            >
+              Exploring security, building modern web experiences, and learning
+              cloud technologies. Bridging the gap between secure infrastructure
+              and elegant frontend design.
+            </p>
+
+            <!-- Achievement Stats -->
+            <div
+              class="flex flex-wrap justify-center lg:justify-start gap-6 mb-10"
+            >
+              <div class="text-center lg:text-left">
+                <div class="text-3xl font-bold text-[#8FE3FF]">15+</div>
+                <div class="text-sm text-gray-500">Projects Built</div>
+              </div>
+              <div class="h-12 w-px bg-gray-700 hidden sm:block"></div>
+              <div class="text-center lg:text-left">
+                <div class="text-3xl font-bold text-[#FF9900]">4</div>
+                <div class="text-sm text-gray-500">Certifications</div>
+              </div>
+              <div class="h-12 w-px bg-gray-700 hidden sm:block"></div>
+              <div class="text-center lg:text-left">
+                <div class="text-3xl font-bold text-white">2+</div>
+                <div class="text-sm text-gray-500">Years Coding</div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+              <a
+                href="#projects"
+                class="px-8 py-4 rounded-lg bg-[#F5F7FA] text-[#1E2A38] font-bold hover:bg-white transition-all hover:scale-105 shadow-[0_0_20px_rgba(245,247,250,0.2)]"
+              >
+                View Projects
+              </a>
+              <a
+                href="resume.pdf"
+                download="Muhammad_Zain_Resume.pdf"
+                class="px-8 py-4 rounded-lg border border-[#8FE3FF]/30 text-[#8FE3FF] hover:border-[#8FE3FF] hover:bg-[#8FE3FF]/10 transition-all"
+              >
+                Download CV
+              </a>
+              <a
+                href="#contact"
+                class="px-8 py-4 rounded-lg text-[#1E2A38] font-bold hover:shadow-[0_0_20px_rgba(255,153,0,0.4)] transition-all"
+                style="background: var(--accent-orange-gradient)"
+              >
+                Contact Me
+              </a>
+            </div>
+
+            <div
+              class="mt-10 flex justify-center lg:justify-start gap-6 text-2xl text-gray-500"
+            >
+              <a
+                href="https://github.com/mzain2004"
+                target="_blank"
+                class="hover:text-white hover:scale-110 transition-all"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="https://linkedin.com/in/muhammadzain2004"
+                target="_blank"
+                class="hover:text-[#0077b5] hover:scale-110 transition-all"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div
+            class="w-full lg:w-2/5 flex justify-center reveal active delay-200 relative"
+          >
+            <div class="relative w-72 h-72 sm:w-96 sm:h-96">
+              <!-- Tech Halo Rings -->
+              <div
+                class="absolute inset-0 rounded-full border border-[#8FE3FF]/20 animate-[spin_20s_linear_infinite]"
+              ></div>
+              <div
+                class="absolute inset-4 rounded-full border border-[#FF9900]/20 animate-[spin_15s_linear_infinite_reverse]"
+              ></div>
+              <div
+                class="absolute inset-[-20px] rounded-full border border-dashed border-gray-700 animate-[spin_40s_linear_infinite]"
+              ></div>
+
+              <!-- Profile Image -->
+              <div
+                class="absolute inset-2 overflow-hidden border-4 border-[#2A2F36] shadow-[0_0_50px_rgba(143,227,255,0.15)] z-10 rounded-full"
+              >
+                <img
+                  src="profile_pic.png"
+                  alt="Muhammad Zain"
+                  class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Floating Elements -->
+              <div
+                id="shield-icon"
+                class="absolute -top-4 -right-4 bg-[#2A2F36] p-3 rounded-xl border border-[#8FE3FF]/30 shadow-lg z-20"
+              >
+                <i class="fas fa-shield-alt text-[#8FE3FF] text-xl"></i>
+              </div>
+              <div
+                id="cloud-icon"
+                class="absolute bottom-10 -left-8 bg-[#2A2F36] p-3 rounded-xl border border-[#FF9900]/30 shadow-lg z-20"
+              >
+                <i class="fas fa-cloud text-[#FF9900] text-xl"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Fade -->
+      <div
+        class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#1E2A38] to-transparent pointer-events-none"
+      ></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="glass-panel rounded-2xl p-1 border border-[#8FE3FF]/10 reveal"
+        >
+          <div class="flex flex-col md:flex-row">
+            <!-- Decorative Side -->
+            <div
+              class="hidden md:flex md:w-1/3 bg-[#2A2F36]/50 rounded-l-xl items-center justify-center relative overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"
+              ></div>
+              <div class="text-center relative z-10">
+                <div
+                  class="w-24 h-24 mx-auto bg-[#1E2A38] rounded-full flex items-center justify-center mb-4 border border-[#8FE3FF]/30 shadow-[0_0_20px_rgba(143,227,255,0.2)]"
+                >
+                  <i class="fas fa-user-astronaut text-4xl text-[#8FE3FF]"></i>
+                </div>
+                <h3 class="text-white font-bold text-xl">Muhammad Zain</h3>
+                <p class="text-sm text-gray-400 mt-1">Cyber Security Student</p>
+              </div>
+            </div>
+
+            <!-- Content Side -->
+            <div class="p-8 md:p-12 md:w-2/3">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="h-1 w-8 bg-[#FF9900]"></div>
+                <h2
+                  class="text-2xl font-bold font-['Space_Grotesk'] text-transparent bg-clip-text bg-gradient-to-r from-[#F5F7FA] to-[#8FE3FF]"
+                >
+                  About Me
+                </h2>
+              </div>
+
+              <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                I am <strong class="text-white">Muhammad Zain</strong>, a Cyber
+                Security undergraduate at
+                <span class="text-[#8FE3FF]">Air University Multan</span>. I'm
+                passionate about cloud technologies, modern web development,
+                frontend engineering, and cybersecurity fundamentals. I've
+                completed
+                <strong class="text-[#FF9900]">4 industry certifications</strong
+                >, worked on
+                <strong class="text-[#FF9900]">15+ hands-on projects</strong
+                >, and gained practical experience through remote internships in
+                software engineering and cloud computing.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <div class="flex items-center gap-3 text-gray-400">
+                  <i class="fas fa-check text-[#FF9900]"></i>
+                  <span>Data Science Foundation Track</span>
+                </div>
+                <div class="flex items-center gap-3 text-gray-400">
+                  <i class="fas fa-check text-[#FF9900]"></i>
+                  <span>Remote Web Dev Internship</span>
+                </div>
+                <div class="flex items-center gap-3 text-gray-400">
+                  <i class="fas fa-check text-[#FF9900]"></i>
+                  <span>Research & Innovation</span>
+                </div>
+                <div class="flex items-center gap-3 text-gray-400">
+                  <i class="fas fa-check text-[#FF9900]"></i>
+                  <span>Building Scalable Projects</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+          <h2
+            class="text-3xl md:text-4xl font-bold font-['Space_Grotesk'] text-transparent bg-clip-text bg-gradient-to-r from-[#F5F7FA] to-[#8FE3FF]"
+          >
+            Skill Arsenal
+          </h2>
+          <p class="text-gray-300 mt-4">
+            Technologies and methodologies I utilize
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Technical Skills -->
+          <div class="reveal">
+            <h3
+              class="text-xl font-semibold text-[#8FE3FF] mb-6 flex items-center gap-2"
+            >
+              <i class="fas fa-code"></i> Technical Proficiency
+            </h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              <div
+                class="glass-panel p-4 rounded-xl text-center hover-3d group cursor-pointer hover:shadow-[0_0_20px_rgba(227,79,38,0.2)] hover:border-[#E34F26]/50 transition-all"
+              >
+                <i
+                  class="fab fa-html5 text-3xl text-[#E34F26] mb-2 group-hover:scale-110 transition-transform"
+                ></i>
+                <p class="font-medium text-sm text-gray-300">HTML/CSS/JS</p>
+              </div>
+              <div
+                class="glass-panel p-4 rounded-xl text-center hover-3d group cursor-pointer hover:shadow-[0_0_20px_rgba(104,160,99,0.2)] hover:border-[#68A063]/50 transition-all"
+              >
+                <i
+                  class="fab fa-node text-3xl text-[#68A063] mb-2 group-hover:scale-110 transition-transform"
+                ></i>
+                <p class="font-medium text-sm text-gray-300">Node.js Basics</p>
+              </div>
+              <div
+                class="glass-panel p-4 rounded-xl text-center hover-3d group cursor-pointer hover:shadow-[0_0_20px_rgba(119,123,180,0.2)] hover:border-[#777BB4]/50 transition-all"
+              >
+                <i
+                  class="fab fa-php text-3xl text-[#777BB4] mb-2 group-hover:scale-110 transition-transform"
+                ></i>
+                <p class="font-medium text-sm text-gray-300">PHP (CRUD)</p>
+              </div>
+              <div
+                class="glass-panel p-4 rounded-xl text-center hover-3d group cursor-pointer hover:shadow-[0_0_20px_rgba(143,227,255,0.2)] hover:border-[#8FE3FF]/50 transition-all"
+              >
+                <i
+                  class="fas fa-plug text-3xl text-[#8FE3FF] mb-2 group-hover:scale-110 transition-transform"
+                ></i>
+                <p class="font-medium text-sm text-gray-300">API Integration</p>
+              </div>
+              <div
+                class="glass-panel p-4 rounded-xl text-center hover-3d group cursor-pointer hover:shadow-[0_0_20px_rgba(255,153,0,0.2)] hover:border-[#FF9900]/50 transition-all"
+              >
+                <i
+                  class="fas fa-user-shield text-3xl text-[#FF9900] mb-2 group-hover:scale-110 transition-transform"
+                ></i>
+                <p class="font-medium text-sm text-gray-300">Cyber Security</p>
+              </div>
+              <div
+                class="glass-panel p-4 rounded-xl text-center hover-3d group cursor-pointer hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:border-white/50 transition-all"
+              >
+                <i
+                  class="fas fa-cloud text-3xl text-white mb-2 group-hover:scale-110 transition-transform"
+                ></i>
+                <p class="font-medium text-sm text-gray-300">Cloud (OCI/GCP)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="reveal delay-100">
+            <h3
+              class="text-xl font-semibold text-[#FF9900] mb-6 flex items-center gap-2"
+            >
+              <i class="fas fa-brain"></i> Soft Skills
+            </h3>
+            <div class="space-y-4">
+              <div
+                class="bg-[#2A2F36] p-4 rounded-xl flex items-center gap-4 border border-white/5 hover:border-[#8FE3FF]/30 transition-colors"
+              >
+                <div class="bg-[#8FE3FF]/10 p-2 rounded-lg text-[#8FE3FF]">
+                  <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold text-white">Problem Solving</h4>
+                  <div class="w-full bg-gray-700 h-1.5 rounded-full mt-2">
+                    <div class="bg-[#8FE3FF] h-1.5 rounded-full w-[90%]"></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#2A2F36] p-4 rounded-xl flex items-center gap-4 border border-white/5 hover:border-[#FF9900]/30 transition-colors"
+              >
+                <div class="bg-[#FF9900]/10 p-2 rounded-lg text-[#FF9900]">
+                  <i class="fas fa-microscope"></i>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold text-white">Research & Analysis</h4>
+                  <div class="w-full bg-gray-700 h-1.5 rounded-full mt-2">
+                    <div class="bg-[#FF9900] h-1.5 rounded-full w-[95%]"></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-[#2A2F36] p-4 rounded-xl flex items-center gap-4 border border-white/5 hover:border-green-500/30 transition-colors"
+              >
+                <div class="bg-green-500/10 p-2 rounded-lg text-green-500">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold text-white">Team Collaboration</h4>
+                  <div class="w-full bg-gray-700 h-1.5 rounded-full mt-2">
+                    <div class="bg-green-500 h-1.5 rounded-full w-[85%]"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 relative overflow-hidden">
+      <!-- Gradient blend top -->
+      <div
+        class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#2A2F36] to-transparent pointer-events-none z-0"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16 reveal">
+          <h2
+            class="text-3xl md:text-4xl font-bold font-['Space_Grotesk'] text-transparent bg-clip-text bg-gradient-to-r from-[#F5F7FA] to-[#8FE3FF]"
+          >
+            Featured Projects
+          </h2>
+          <p class="text-gray-300 mt-4 max-w-2xl mx-auto">
+            A collection of web applications, clones, and security tools
+            demonstrating my technical growth.
+          </p>
+        </div>
+
+        <div id="projects-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+           <!-- Projects will be injected here via JS -->
+           <div class="col-span-full text-center text-gray-500 animate-pulse">
+              Loading projects from GitHub...
+           </div>
+        </div>
+
+        <div class="text-center mt-12 reveal">
+          <a
+            href="https://github.com/mzain2004"
+            target="_blank"
+            class="inline-flex items-center gap-2 text-[#8FE3FF] hover:text-white transition-colors border-b border-dashed border-[#8FE3FF] pb-1"
+          >
+            Explore Full Portfolio on GitHub
+            <i class="fas fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience" class="py-24 bg-[#2A2F36]/30 relative">
+      <!-- Gradient blend top -->
+      <div
+        class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#1E2A38] to-transparent pointer-events-none"
+      ></div>
+      <!-- Gradient blend bottom -->
+      <div
+        class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#1E2A38] to-transparent pointer-events-none"
+      ></div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Experience -->
+          <div class="reveal">
+            <h2
+              class="text-2xl font-bold mb-8 flex items-center gap-3 font-['Space_Grotesk'] text-transparent bg-clip-text bg-gradient-to-r from-[#F5F7FA] to-[#8FE3FF]"
+            >
+              <span class="p-2 bg-[#FF9900]/20 rounded-lg text-[#FF9900]"
+                ><i class="fas fa-briefcase"></i
+              ></span>
+              Experience
+            </h2>
+
+            <div id="experience-list" class="space-y-8 border-l-2 border-white/5 ml-3 pl-8 relative">
+               <!-- Injected via JS -->
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="reveal delay-100">
+            <h2
+              class="text-2xl font-bold mb-8 flex items-center gap-3 font-['Space_Grotesk'] text-transparent bg-clip-text bg-gradient-to-r from-[#F5F7FA] to-[#8FE3FF]"
+            >
+              <span class="p-2 bg-[#8FE3FF]/20 rounded-lg text-[#8FE3FF]"
+                ><i class="fas fa-graduation-cap"></i
+              ></span>
+              Education
+            </h2>
+
+            <div id="education-list" class="space-y-8 border-l-2 border-white/5 ml-3 pl-8 relative">
+               <!-- Injected via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center mb-12">
+                <div class="w-12 h-12 bg-[#1E2A38] rounded-xl flex items-center justify-center mr-4 shadow-[0_0_20px_rgba(143,227,255,0.2)]">
+                    <i class="fas fa-certificate text-2xl text-[#8FE3FF]"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Certifications</h2>
+            </div>
+            
+            <div id="certifications-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats & Radar Section -->
+    <section id="stats" class="py-24 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+          <h2
+            class="text-3xl md:text-4xl font-bold font-['Space_Grotesk'] text-transparent bg-clip-text bg-gradient-to-r from-[#F5F7FA] to-[#8FE3FF]"
+          >
+            System Metrics
+          </h2>
+          <p class="text-gray-300 mt-4">
+            Live telemetry from development environment
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Code Activity Dashboard -->
+          <div class="space-y-6 reveal">
+             <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2"><i class="fas fa-code-branch text-[#FF9900]"></i> Activity Log</h3>
+             
+             <div class="grid grid-cols-2 gap-4">
+                <!-- Stat Card 1 -->
+                <div class="glass-panel p-6 rounded-xl text-center hover-3d">
+                   <div id="commit-count" class="text-4xl font-bold text-[#8FE3FF] mb-1">--</div>
+                   <div class="text-xs text-gray-400 uppercase tracking-wider">Yearly Commits</div>
+                </div>
+                <!-- Stat Card 2 -->
+                <div class="glass-panel p-6 rounded-xl text-center hover-3d">
+                   <div id="repo-count" class="text-4xl font-bold text-[#FF9900] mb-1">--</div>
+                   <div class="text-xs text-gray-400 uppercase tracking-wider">Repositories</div>
+                </div>
+                <!-- Stat Card 3 -->
+                <div class="glass-panel p-6 rounded-xl text-center hover-3d">
+                   <div id="streak-count" class="text-4xl font-bold text-green-400 mb-1">--</div>
+                   <div class="text-xs text-gray-400 uppercase tracking-wider">Day Streak</div>
+                </div>
+                <!-- Stat Card 4 -->
+                <div class="glass-panel p-6 rounded-xl text-center hover-3d">
+                   <div id="hours-count" class="text-4xl font-bold text-purple-400 mb-1">--</div>
+                   <div class="text-xs text-gray-400 uppercase tracking-wider">Hours Coded</div>
+                </div>
+             </div>
+
+             <!-- Language Bar -->
+             <div class="glass-panel p-6 rounded-xl">
+                <h4 class="text-sm font-bold text-white mb-4">Most Used Languages (GitHub)</h4>
+                <div class="space-y-3" id="lang-container">
+                   <!-- Loading State -->
+                   <div class="animate-pulse space-y-3">
+                      <div class="h-2 bg-gray-700 rounded col-span-2"></div>
+                      <div class="h-2 bg-gray-700 rounded col-span-1"></div>
+                   </div>
+                </div>
+             </div>
+          </div>
+
+          <!-- Radar Chart -->
+          <div class="reveal delay-200 flex justify-center">
+             <div class="glass-panel p-4 rounded-2xl w-full max-w-md aspect-square flex items-center justify-center bg-[#1E2A38]/50">
+                <canvas id="skillRadar"></canvas>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="glass-panel rounded-2xl p-8 md:p-16 border border-[#8FE3FF]/10 shadow-[0_0_50px_rgba(143,227,255,0.05)] reveal text-center relative overflow-hidden neon-border"
+        >
+          <!-- Bg Glow -->
+          <div
+            class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#1E2A38]/50 to-transparent z-0"
+          ></div>
+
+          <div class="relative z-10">
+            <h2
+              class="text-3xl font-bold mb-4 font-['Space_Grotesk'] text-transparent bg-clip-text bg-gradient-to-r from-[#F5F7FA] to-[#8FE3FF]"
+            >
+              Let's Connect
+            </h2>
+            <p class="text-gray-300 mb-10 max-w-lg mx-auto">
+              Whether you have a question about cybersecurity, cloud
+              engineering, or just want to say hi, my inbox is always open.
+            </p>
+
+            <div class="flex justify-center gap-8 mb-12">
+              <a
+                href="https://linkedin.com/in/muhammadzain2004"
+                target="_blank"
+                class="group relative"
+              >
+                <div
+                  class="absolute inset-0 bg-[#0077b5] rounded-full blur opacity-20 group-hover:opacity-60 transition-opacity"
+                ></div>
+                <div
+                  class="relative bg-[#2A2F36] p-4 rounded-full border border-white/10 group-hover:-translate-y-2 transition-transform w-[66px] h-[66px] flex items-center justify-center"
+                >
+                  <i class="fab fa-linkedin text-2xl text-white"></i>
+                </div>
+              </a>
+              <a
+                href="https://github.com/mzain2004"
+                target="_blank"
+                class="group relative"
+              >
+                <div
+                  class="absolute inset-0 bg-white rounded-full blur opacity-10 group-hover:opacity-40 transition-opacity"
+                ></div>
+                <div
+                  class="relative bg-[#2A2F36] p-4 rounded-full border border-white/10 group-hover:-translate-y-2 transition-transform w-[66px] h-[66px] flex items-center justify-center"
+                >
+                  <i class="fab fa-github text-2xl text-white"></i>
+                </div>
+              </a>
+              <a
+                href="https://x.com/mzain2004"
+                target="_blank"
+                class="group relative"
+              >
+                <div
+                  class="absolute inset-0 bg-black rounded-full blur opacity-20 group-hover:opacity-60 transition-opacity"
+                ></div>
+                <div
+                  class="relative bg-[#2A2F36] p-4 rounded-full border border-white/10 group-hover:-translate-y-2 transition-transform w-[66px] h-[66px] flex items-center justify-center"
+                >
+                  <i class="fab fa-x-twitter text-2xl text-white"></i>
+                </div>
+              </a>
+              <a
+                href="mailto:zainrana605890@gmail.com"
+                class="group relative"
+                title="Email: zainrana605890@gmail.com"
+              >
+                <div
+                  class="absolute inset-0 bg-[#FF9900] rounded-full blur opacity-20 group-hover:opacity-60 transition-opacity"
+                ></div>
+                <div
+                  class="relative bg-[#2A2F36] p-4 rounded-full border border-white/10 group-hover:-translate-y-2 transition-transform w-[66px] h-[66px] flex items-center justify-center"
+                >
+                  <i class="fas fa-envelope text-2xl text-white"></i>
+                </div>
+              </a>
+            </div>
+
+            <form
+              id="contact-form"
+              class="max-w-md mx-auto text-left space-y-4"
+              action="https://formspree.io/f/mnnwpgda"
+              method="POST"
+            >
+              <div id="form-fields">
+                <div class="mb-4">
+                  <input
+                    type="text"
+                    name="name"
+                    class="w-full bg-[#1E2A38] border border-gray-700 rounded-full px-6 py-3 text-white placeholder-gray-400 focus:bg-[#F5F7FA] focus:text-blue-600 focus:placeholder-gray-500 focus:outline-none focus:border-[#8FE3FF] transition-colors"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <input
+                    type="email"
+                    name="email"
+                    class="w-full bg-[#1E2A38] border border-gray-700 rounded-full px-6 py-3 text-white placeholder-gray-400 focus:bg-[#F5F7FA] focus:text-blue-600 focus:placeholder-gray-500 focus:outline-none focus:border-[#8FE3FF] transition-colors"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <textarea
+                    name="message"
+                    class="w-full bg-[#1E2A38] border border-gray-700 rounded-2xl px-6 py-4 text-white placeholder-gray-400 focus:bg-[#F5F7FA] focus:text-blue-600 focus:placeholder-gray-500 focus:outline-none focus:border-[#8FE3FF] transition-colors h-32 resize-none"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  id="submit-btn"
+                  class="w-full bg-gradient-to-r from-[#8FE3FF] to-[#0077b5] text-[#1E2A38] font-bold py-3.5 rounded-full shadow-lg hover:shadow-[#8FE3FF]/30 transition-all hover:scale-[1.02]"
+                >
+                  Send Message
+                </button>
+              </div>
+
+              <!-- Success Message (Hidden by default) -->
+              <div id="success-message" class="hidden text-center py-8">
+                <div
+                  class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce"
+                >
+                  <i class="fas fa-check text-4xl text-green-400"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">
+                  Message Sent!
+                </h3>
+                <p class="text-gray-400">
+                  Thank you for reaching out. I'll get back to you soon!
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer class="py-12 bg-[#0F172A] border-t border-white/5 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="flex justify-center gap-8 mb-8">
+          <a href="https://github.com/mzain2004" target="_blank" class="text-gray-400 hover:text-white transition-colors text-2xl hover:-translate-y-1 transform duration-300">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/muhammadzain2004" target="_blank" class="text-gray-400 hover:text-[#0077b5] transition-colors text-2xl hover:-translate-y-1 transform duration-300">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://x.com/mzain2004" target="_blank" class="text-gray-400 hover:text-white transition-colors text-2xl hover:-translate-y-1 transform duration-300">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+          <a href="mailto:zainrana605890@gmail.com" class="text-gray-400 hover:text-[#FF9900] transition-colors text-2xl hover:-translate-y-1 transform duration-300">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        
+        <p class="text-gray-500 text-sm mb-2">
+          &copy; 2025 Muhammad Zain. All Rights Reserved.
+        </p>
+        <p class="text-gray-600 text-xs">
+          Built with <i class="fas fa-heart text-red-500 mx-1"></i> and Code.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Project Modal Overlay -->
+    <div id="project-modal" class="modal-backdrop">
+       <div class="modal-content rounded-2xl w-full max-w-2xl mx-4 overflow-hidden relative">
+          <button id="close-modal" class="absolute top-4 right-4 text-white hover:text-[#FF9900] z-10 text-xl">
+             <i class="fas fa-times"></i>
+          </button>
+          
+          <div class="h-48 bg-[#1E2A38] relative">
+             <img id="modal-img" src="" alt="Project Preview" class="w-full h-full object-cover opacity-50">
+             <div class="absolute inset-0 bg-gradient-to-t from-[#1E2A38] to-transparent"></div>
+             <div class="absolute bottom-6 left-6">
+                <h3 id="modal-title" class="text-3xl font-bold text-white font-['Space_Grotesk']">Project Title</h3>
+                <div id="modal-tags" class="flex gap-2 mt-2">
+                   <!-- Tags injected via JS -->
+                </div>
+             </div>
+          </div>
+          
+          <div class="p-8">
+             <p id="modal-desc" class="text-gray-300 mb-8 leading-relaxed">
+                Project description goes here...
+             </p>
+             
+             <div class="flex gap-4">
+                <a id="modal-demo" href="#" target="_blank" class="flex-1 bg-[#FF9900] text-[#1E2A38] font-bold py-3 rounded-lg text-center hover:bg-[#FFB84D] transition-colors">
+                   <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                </a>
+                <a id="modal-code" href="#" target="_blank" class="flex-1 border border-[#8FE3FF] text-[#8FE3FF] font-bold py-3 rounded-lg text-center hover:bg-[#8FE3FF]/10 transition-colors">
+                   <i class="fab fa-github mr-2"></i> View Code
+                </a>
+             </div>
+          </div>
+       </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scroll-top-btn"
+      class="scroll-to-top"
+      aria-label="Scroll to top"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // Optimized scroll handler using requestAnimationFrame
+      let ticking = false;
+      function handleScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            // Scroll Progress Bar
+            const winScroll =
+              document.body.scrollTop || document.documentElement.scrollTop;
+            const height =
+              document.documentElement.scrollHeight -
+              document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width =
+              scrolled + "%";
+
+            // Scroll to Top Button
+            const scrollTopBtn = document.getElementById("scroll-top-btn");
+            if (window.pageYOffset > 300) {
+              scrollTopBtn.classList.add("active");
+            } else {
+              scrollTopBtn.classList.remove("active");
+            }
+
+            // Reveal Animation
+            const reveals = document.querySelectorAll(".reveal");
+            const windowHeight = window.innerHeight;
+            const elementVisible = 100;
+
+            for (let i = 0; i < reveals.length; i++) {
+              const elementTop = reveals[i].getBoundingClientRect().top;
+              if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+
+                // Staggered Animation Logic for Children
+                const children = reveals[i].children;
+                if (children.length > 0) {
+                  let delay = 0;
+                  for (let j = 0; j < children.length; j++) {
+                    // Only apply if not already applied
+                    if (!children[j].style.transitionDelay) {
+                      // Check if it's a grid item or similar card
+                      if (
+                        children[j].classList.contains("glass-panel") ||
+                        children[j].tagName === "DIV"
+                      ) {
+                        children[j].style.transitionDelay = `${delay}ms`;
+                        delay += 100; // 100ms stagger
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      // Single scroll event listener
+      window.addEventListener("scroll", handleScroll, { passive: true });
+
+      // Initial reveal on load
+      handleScroll();
+
+      // Mobile Menu Logic
+      const btn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("opacity-0");
+        menu.classList.toggle("-translate-y-5");
+        menu.classList.toggle("pointer-events-none");
+        menu.classList.toggle("active-menu");
+      });
+
+      // Scroll to Top Button Click
+      const scrollTopBtn = document.getElementById("scroll-top-btn");
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // --- Advanced Features Implementation ---
+
+      // 1. Typing Animation
+      const typingText = document.getElementById("typing-text");
+      const phrases = [
+        "Cyber Security Student",
+        "Cloud Learner",
+        "Web Developer",
+      ];
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let typeSpeed = 100;
+
+      function type() {
+        const currentPhrase = phrases[phraseIndex];
+
+        if (isDeleting) {
+          typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+          charIndex--;
+          typeSpeed = 50; // Faster deleting
+        } else {
+          typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+          charIndex++;
+          typeSpeed = 100; // Normal typing
+        }
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+          isDeleting = true;
+          typeSpeed = 2000; // Pause at end
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          typeSpeed = 500; // Pause before new word
+        }
+
+        setTimeout(type, typeSpeed);
+      }
+
+      // Start typing animation
+      document.addEventListener("DOMContentLoaded", type);
+
+      // 2. Particles Background
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#8fe3ff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.2, random: false },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#8fe3ff",
+            opacity: 0.1,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+            resize: true,
+          },
+          modes: {
+            grab: { distance: 140, line_linked: { opacity: 0.5 } },
+            push: { particles_nb: 4 },
+          },
+        },
+        retina_detect: true,
+      });
+
+      // 3. Active Navigation Highlighting (Improved Logic)
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '-50% 0px -50% 0px', // Trigger exactly at center of viewport
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            navLinks.forEach((link) => {
+              link.classList.remove("active-nav");
+              if (link.getAttribute("href") === `#${id}`) {
+                link.classList.add("active-nav");
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+
+      // 4. Bouncing Profile Icons
+      const profileImage = document.querySelector(".w-72"); // Select the profile container
+      const shieldIcon = document.getElementById("shield-icon");
+      const cloudIcon = document.getElementById("cloud-icon");
+
+      const iconObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              shieldIcon.classList.add("bounce-on-reveal");
+              cloudIcon.classList.add("bounce-on-reveal");
+              // Optional: Stop observing after triggering once
+              // iconObserver.unobserve(entry.target);
+            } else {
+              // Remove class to re-trigger animation when scrolling back
+              shieldIcon.classList.remove("bounce-on-reveal");
+              cloudIcon.classList.remove("bounce-on-reveal");
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      if (profileImage) {
+        iconObserver.observe(profileImage);
+      }
+
+      // --- NEW FEATURES JS ---
+
+      // 1. Skill Radar Chart
+      const ctx = document.getElementById('skillRadar').getContext('2d');
+      const skillRadar = new Chart(ctx, {
+          type: 'radar',
+          data: {
+              labels: ['Frontend', 'Backend', 'Cloud (AWS/GCP)', 'Security', 'DevOps', 'UI/UX'],
+              datasets: [{
+                  label: 'Skill Proficiency',
+                  data: [90, 75, 65, 80, 60, 85],
+                  backgroundColor: 'rgba(143, 227, 255, 0.2)',
+                  borderColor: '#8FE3FF',
+                  pointBackgroundColor: '#FF9900',
+                  pointBorderColor: '#fff',
+                  pointHoverBackgroundColor: '#fff',
+                  pointHoverBorderColor: '#FF9900'
+              }]
+          },
+          options: {
+              scales: {
+                  r: {
+                      angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                      grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                      pointLabels: {
+                          color: '#F5F7FA',
+                          font: { size: 12, family: "'Space Grotesk', sans-serif" }
+                      },
+                      ticks: { display: false, backdropColor: 'transparent' }
+                  }
+              },
+              plugins: {
+                  legend: { display: false }
+              }
+          }
+      });
+
+      // 2. Hacker Mode Toggle & Persistence
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      
+      // Check LocalStorage on Load
+      if(localStorage.getItem('hackerMode') === 'true') {
+          body.classList.add('hacker-mode');
+          updateChartColors(true);
+      }
+
+      themeToggle.addEventListener('click', () => {
+          body.classList.toggle('hacker-mode');
+          const isHacker = body.classList.contains('hacker-mode');
+          localStorage.setItem('hackerMode', isHacker);
+          updateChartColors(isHacker);
+      });
+
+      function updateChartColors(isHacker) {
+          if(isHacker) {
+              skillRadar.data.datasets[0].borderColor = '#00FF41';
+              skillRadar.data.datasets[0].backgroundColor = 'rgba(0, 255, 65, 0.2)';
+              skillRadar.data.datasets[0].pointBackgroundColor = '#008F11';
+              skillRadar.options.scales.r.pointLabels.color = '#00FF41';
+          } else {
+              skillRadar.data.datasets[0].borderColor = '#8FE3FF';
+              skillRadar.data.datasets[0].backgroundColor = 'rgba(143, 227, 255, 0.2)';
+              skillRadar.data.datasets[0].pointBackgroundColor = '#FF9900';
+              skillRadar.options.scales.r.pointLabels.color = '#F5F7FA';
+          }
+          skillRadar.update();
+      }
+
+      // 3. Project Modals
+      const modal = document.getElementById('project-modal');
+      const closeModal = document.getElementById('close-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDesc = document.getElementById('modal-desc');
+      const modalImg = document.getElementById('modal-img');
+      const modalTags = document.getElementById('modal-tags');
+      const modalDemo = document.getElementById('modal-demo');
+      const modalCode = document.getElementById('modal-code');
+
+      // Add click event to all "View Code" buttons in projects
+      // Note: In a real app, we'd use data attributes. For now, we'll simulate content.
+      document.querySelectorAll('#projects .glass-panel a').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+              e.preventDefault(); // Prevent default link behavior for demo
+              
+              // Get parent card info
+              const card = btn.closest('.glass-panel');
+              const title = card.querySelector('h3').innerText;
+              const desc = card.querySelector('p').innerText; // Simplified
+              
+              // Populate Modal
+              modalTitle.innerText = title;
+              modalDesc.innerText = `Detailed breakdown of ${title}. This project demonstrates advanced implementation of secure coding practices and modern UI principles. (Placeholder description)`;
+              modalImg.src = "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"; // Placeholder
+              
+              modal.classList.add('active');
+          });
+      });
+
+      closeModal.addEventListener('click', () => {
+          modal.classList.remove('active');
+      });
+
+      modal.addEventListener('click', (e) => {
+          if(e.target === modal) modal.classList.remove('active');
+      });
+
+      // 4. Fetch GitHub Data & Render Content
+      async function initPortfolio() {
+          // --- Render Static Content from data.js ---
+          renderExperience();
+          renderEducation();
+          renderCertifications(); // Call the new function
+          renderSkills(); // You might want to make skills dynamic too
+          updateStats();
+
+          // --- Fetch GitHub Data ---
+          const username = portfolioData.githubUsername;
+          try {
+              // Fetch User Data
+              const userRes = await fetch(`https://api.github.com/users/${username}`);
+              const userData = await userRes.json();
+              if(userData.public_repos) {
+                  document.getElementById('repo-count').innerText = userData.public_repos;
+              }
+
+              // Fetch Repos
+              const reposRes = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
+              const repos = await reposRes.json();
+              
+              renderProjects(repos);
+              renderLanguages(repos);
+
+          } catch (error) {
+              console.error('GitHub API Error:', error);
+              document.getElementById('lang-container').innerHTML = '<p class="text-red-400 text-xs">Failed to load GitHub data.</p>';
+              document.getElementById('projects-grid').innerHTML = '<p class="text-red-400 text-center col-span-full">Failed to load projects.</p>';
+          }
+      }
+
+      function renderProjects(repos) {
+          const grid = document.getElementById('projects-grid');
+          grid.innerHTML = '';
+
+          const visibleRepos = repos.filter(repo => 
+              !portfolioData.hiddenRepos.includes(repo.name) && !repo.fork
+          ).slice(0, 6); // Limit to 6 for UI balance
+
+          visibleRepos.forEach((repo, index) => {
+              const delay = index * 100;
+              const html = `
+                <div class="glass-panel rounded-xl overflow-hidden hover-3d reveal" style="transition-delay: ${delay}ms">
+                    <div class="h-48 bg-[#1E2A38] relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#8FE3FF]/10 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 flex gap-2 flex-wrap">
+                            <span class="text-xs bg-[#2A2F36]/80 backdrop-blur-sm px-2 py-1 rounded text-[#8FE3FF] border border-[#8FE3FF]/30">
+                                ${repo.language || 'Code'}
+                            </span>
+                            <span class="text-xs bg-[#2A2F36]/80 backdrop-blur-sm px-2 py-1 rounded text-[#FF9900] border border-[#FF9900]/30">
+                                ${repo.stargazers_count} <i class="fas fa-star text-[10px]"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 truncate">${repo.name}</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3 h-10">
+                            ${repo.description || 'No description available.'}
+                        </p>
+                        <div class="flex gap-4 mt-auto">
+                            ${repo.homepage ? `
+                            <a href="${repo.homepage}" target="_blank" class="text-sm font-medium text-white hover:text-[#FF9900] transition-colors">
+                                <i class="fas fa-external-link-alt mr-1"></i> Demo
+                            </a>` : ''}
+                            <a href="${repo.html_url}" target="_blank" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-github mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+              `;
+              grid.innerHTML += html;
+          });
+          
+          // Re-trigger reveal animation for new elements
+          // (Simple workaround: just add 'active' class if they are in view)
+          setTimeout(() => {
+             const reveals = document.querySelectorAll(".reveal");
+             reveals.forEach(r => r.classList.add('active'));
+          }, 100);
+      }
+
+      function renderLanguages(repos) {
+          const languages = {};
+          let totalBytes = 0;
+          repos.forEach(repo => {
+              if(repo.language) languages[repo.language] = (languages[repo.language] || 0) + 1;
+          });
+
+          const sortedLangs = Object.entries(languages).sort(([,a], [,b]) => b - a).slice(0, 3);
+          const totalRepos = repos.length;
+          const langContainer = document.getElementById('lang-container');
+          langContainer.innerHTML = '';
+          const colors = ['#FF9900', '#8FE3FF', '#4ade80'];
+
+          sortedLangs.forEach(([lang, count], index) => {
+              const percentage = Math.round((count / totalRepos) * 100);
+              const color = colors[index % colors.length];
+              const html = `
+               <div>
+                  <div class="flex justify-between text-xs text-gray-400 mb-1">
+                     <span>${lang}</span>
+                     <span>${percentage}%</span>
+                  </div>
+                  <div class="w-full bg-gray-700 h-2 rounded-full overflow-hidden">
+                     <div class="h-full" style="width: ${percentage}%; background-color: ${color}"></div>
+                  </div>
+               </div>`;
+              langContainer.innerHTML += html;
+          });
+      }
+
+      function renderExperience() {
+          const container = document.getElementById('experience-list');
+          container.innerHTML = '';
+          portfolioData.experience.forEach(job => {
+              const html = `
+              <div class="relative group">
+                <span class="absolute -left-[39px] bg-[#1E2A38] border-2 border-[#FF9900] w-5 h-5 rounded-full mt-1.5 group-hover:scale-125 transition-transform shadow-[0_0_10px_#FF9900]"></span>
+                <h3 class="text-xl font-bold text-white">${job.title}</h3>
+                <p class="text-[#8FE3FF] text-sm font-medium mb-2">${job.company} • ${job.duration}</p>
+                <ul class="list-disc list-inside text-gray-400 text-sm space-y-1">
+                    ${job.description.map(desc => `<li>${desc}</li>`).join('')}
+                </ul>
+              </div>`;
+              container.innerHTML += html;
+          });
+      }
+
+      function renderEducation() {
+          const container = document.getElementById('education-list');
+          container.innerHTML = '';
+          portfolioData.education.forEach(edu => {
+              const html = `
+              <div class="relative group">
+                <span class="absolute -left-[39px] bg-[#1E2A38] border-2 border-[#8FE3FF] w-5 h-5 rounded-full mt-1.5 group-hover:scale-125 transition-transform shadow-[0_0_10px_#8FE3FF]"></span>
+                <div class="flex justify-between items-start">
+                  <h3 class="text-xl font-bold text-white">${edu.degree}</h3>
+                  <span class="text-xs bg-[#2A2F36] px-2 py-1 rounded text-gray-400 border border-white/10">${edu.year}</span>
+                </div>
+                <p class="text-[#8FE3FF] text-sm">${edu.institution}</p>
+              </div>`;
+              container.innerHTML += html;
+          });
+      }
+
+      function renderCertifications() {
+          const container = document.getElementById('certifications-grid');
+          if(!container) return;
+          container.innerHTML = '';
+          
+          portfolioData.certifications.forEach((cert, index) => {
+              // Check if hidden
+              if(cert.hidden) return;
+
+              const delay = index * 100;
+              const html = `
+              <div class="glass-panel p-6 rounded-xl hover-3d reveal relative group overflow-hidden" style="transition-delay: ${delay}ms">
+                  <div class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
+                      <i class="fas fa-certificate text-4xl text-[#FF9900]"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-white mb-2 relative z-10">${cert.name}</h3>
+                  <p class="text-[#8FE3FF] text-sm mb-4 relative z-10">${cert.issuer}</p>
+                  <div class="flex justify-between items-center relative z-10">
+                      <span class="text-xs text-gray-400 bg-[#1E2A38] px-2 py-1 rounded border border-white/5">${cert.date}</span>
+                      ${cert.link ? `<a href="${cert.link}" target="_blank" class="text-[#FF9900] hover:text-white text-sm"><i class="fas fa-external-link-alt"></i> Verify</a>` : ''}
+                  </div>
+              </div>`;
+              container.innerHTML += html;
+          });
+      }
+      
+      function renderSkills() {
+          // Optional: If you want to make the skills section dynamic too, you'd target #skills-grid
+          // For now, we'll leave the HTML structure but you can easily add this.
+      }
+
+      function updateStats() {
+          // Years Coding
+          const currentYear = new Date().getFullYear();
+          const years = currentYear - portfolioData.startYear;
+          
+          // Manual Stats from data.js
+          if(portfolioData.stats) {
+              document.getElementById('commit-count').innerText = portfolioData.stats.totalCommits;
+              document.getElementById('hours-count').innerText = portfolioData.stats.hoursCoded + '+';
+              // Streak is hard to calculate manually without daily data, so we might leave it static or use a placeholder
+              document.getElementById('streak-count').innerText = "∞"; // Fun placeholder or remove
+          }
+      }
+
+      // Initialize
+      initPortfolio();
+
+      
+      // 5. Holographic Tilt for Certifications
+      // REMOVED as per user request for cleaner UI
+
+    </script>
+  </body>
+</html>

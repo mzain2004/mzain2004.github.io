@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Admin | Command Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="data.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "bg-deep": "#0F172A",
+              glass: "rgba(30, 42, 56, 0.8)",
+              "accent-cyan": "#8FE3FF",
+              "accent-orange": "#FF9900",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #0f172a;
+        color: #f5f7fa;
+        font-family: "Inter", sans-serif;
+      }
+      .glass-panel {
+        background: rgba(30, 42, 56, 0.6);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+      .input-field {
+        background: #1e2a38;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+      .input-field:focus {
+        outline: none;
+        border-color: #8fe3ff;
+        box-shadow: 0 0 10px rgba(143, 227, 255, 0.2);
+      }
+      .nav-btn.active-nav {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border-left: 4px solid #8fe3ff;
+      }
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col md:flex-row overflow-hidden">
+    <!-- Login Overlay -->
+    <div
+      id="login-screen"
+      class="fixed inset-0 flex items-center justify-center bg-[#0F172A] z-50 bg-[url('https://assets.codepen.io/13471/sparkles.gif')] bg-cover"
+    >
+      <div class="absolute inset-0 bg-[#0F172A]/90 backdrop-blur-sm"></div>
+      <div
+        class="glass-panel p-8 rounded-2xl w-full max-w-md text-center relative z-10 border border-[#8FE3FF]/30 shadow-[0_0_50px_rgba(143,227,255,0.1)]"
+      >
+        <div
+          class="w-16 h-16 bg-[#1E2A38] rounded-full flex items-center justify-center mx-auto mb-6 border border-[#8FE3FF]/50 shadow-[0_0_20px_rgba(143,227,255,0.3)]"
+        >
+          <i class="fas fa-user-astronaut text-3xl text-[#8FE3FF]"></i>
+        </div>
+        <h2 class="text-2xl font-bold mb-2 text-white">Command Center</h2>
+        <p class="text-gray-400 text-sm mb-6">
+          Enter GitHub Personal Access Token
+        </p>
+
+        <div class="space-y-4">
+          <input
+            type="password"
+            id="token-input"
+            placeholder="ghp_xxxxxxxxxxxx"
+            class="input-field text-center tracking-widest"
+          />
+          <button
+            onclick="verifyToken()"
+            class="w-full bg-gradient-to-r from-[#8FE3FF] to-[#0077b5] text-[#0F172A] font-bold py-3 rounded-xl hover:shadow-[0_0_20px_rgba(143,227,255,0.4)] transition-all transform hover:-translate-y-1"
+          >
+            <i class="fas fa-rocket mr-2"></i> Initialize System
+          </button>
+        </div>
+        <p
+          id="login-error"
+          class="text-red-400 text-xs mt-4 hidden animate-pulse"
+        >
+          <i class="fas fa-exclamation-triangle mr-1"></i> Invalid Token
+        </p>
+        <p class="text-xs text-gray-500 mt-6">
+          Token is stored locally. No server involved.
+        </p>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside
+      class="w-full md:w-72 bg-[#1E2A38]/50 backdrop-blur-xl border-r border-white/5 flex-shrink-0 hidden md:flex flex-col h-screen"
+    >
+      <div class="p-8 border-b border-white/5">
+        <h1
+          class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#F5F7FA] to-[#8FE3FF]"
+        >
+          <i class="fas fa-code-branch mr-2"></i>CMS v2.0
+        </h1>
+        <p class="text-xs text-gray-500 mt-2">Portfolio Management System</p>
+      </div>
+      <nav class="flex-1 p-6 space-y-3 overflow-y-auto">
+        <button
+          onclick="showSection('dashboard')"
+          class="nav-btn w-full text-left px-4 py-3 rounded-xl text-gray-400 hover:bg-white/5 hover:text-white transition-all active-nav"
+        >
+          <i class="fas fa-chart-pie w-6"></i> Dashboard
+        </button>
+        <button
+          onclick="showSection('content')"
+          class="nav-btn w-full text-left px-4 py-3 rounded-xl text-gray-400 hover:bg-white/5 hover:text-white transition-all"
+        >
+          <i class="fas fa-briefcase w-6"></i> Experience
+        </button>
+        <button
+          onclick="showSection('certs')"
+          class="nav-btn w-full text-left px-4 py-3 rounded-xl text-gray-400 hover:bg-white/5 hover:text-white transition-all"
+        >
+          <i class="fas fa-certificate w-6"></i> Certifications
+        </button>
+        <button
+          onclick="showSection('repos')"
+          class="nav-btn w-full text-left px-4 py-3 rounded-xl text-gray-400 hover:bg-white/5 hover:text-white transition-all"
+        >
+          <i class="fab fa-github w-6"></i> Repositories
+        </button>
+      </nav>
+      <div class="p-6 border-t border-white/5">
+        <div id="user-profile" class="flex items-center gap-3 mb-4 opacity-50">
+          <img
+            src="https://github.com/github.png"
+            class="w-8 h-8 rounded-full"
+            alt="User"
+          />
+          <div class="text-xs">
+            <p class="text-white font-bold">Admin User</p>
+            <p class="text-gray-500">Connected</p>
+          </div>
+        </div>
+        <button
+          onclick="logout()"
+          class="w-full text-left px-4 py-2 text-red-400 hover:text-red-300 text-sm rounded-lg hover:bg-red-500/10 transition-all"
+        >
+          <i class="fas fa-sign-out-alt mr-2"></i> Terminate Session
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main
+      id="main-app"
+      class="flex-1 p-8 overflow-y-auto h-screen hidden relative"
+    >
+      <!-- Background Elements -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10"
+      >
+        <div
+          class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#8FE3FF]/5 rounded-full blur-[100px]"
+        ></div>
+        <div
+          class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#FF9900]/5 rounded-full blur-[100px]"
+        ></div>
+      </div>
+
+      <!-- Header -->
+      <header class="flex justify-between items-center mb-10">
+        <div>
+          <h2 class="text-3xl font-bold text-white" id="page-title">
+            Dashboard
+          </h2>
+          <p class="text-gray-400 text-sm mt-1">
+            Real-time overview and controls.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <a
+            href="index.html"
+            target="_blank"
+            class="px-4 py-2 rounded-xl bg-[#1E2A38] text-gray-300 hover:text-white border border-white/10 hover:border-[#8FE3FF]/50 transition-all flex items-center"
+          >
+            <i class="fas fa-external-link-alt mr-2"></i> View Site
+          </a>
+          <button
+            onclick="saveChanges()"
+            id="save-btn"
+            class="px-6 py-2 rounded-xl bg-gradient-to-r from-[#FF9900] to-[#FFB84D] text-[#0F172A] font-bold hover:shadow-[0_0_20px_rgba(255,153,0,0.4)] transition-all transform hover:-translate-y-1 flex items-center"
+          >
+            <i class="fas fa-save mr-2"></i> Save Changes
+          </button>
+        </div>
+      </header>
+
+      <!-- Sections -->
+      <div id="content-area" class="space-y-8 pb-20">
+        <!-- Dashboard / Stats Section -->
+        <div id="section-dashboard" class="space-y-8">
+          <!-- Deployment Status Widget -->
+          <div class="glass-panel p-6 rounded-2xl border-l-4 border-[#8FE3FF]">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-lg font-bold text-white mb-1">
+                  Deployment Status
+                </h3>
+                <p class="text-gray-400 text-xs">GitHub Pages Build Status</p>
+              </div>
+              <div
+                id="deploy-status-badge"
+                class="px-3 py-1 rounded-full bg-gray-700 text-xs text-white font-bold animate-pulse"
+              >
+                Checking...
+              </div>
+            </div>
+            <div class="mt-4 flex gap-8 text-sm">
+              <div>
+                <p class="text-gray-500 text-xs uppercase">Last Build</p>
+                <p id="deploy-time" class="text-white font-mono">--</p>
+              </div>
+              <div>
+                <p class="text-gray-500 text-xs uppercase">Commit</p>
+                <p id="deploy-commit" class="text-[#8FE3FF] font-mono">--</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- Commits -->
+            <div
+              class="glass-panel p-6 rounded-2xl relative overflow-hidden group hover:border-[#8FE3FF]/50 transition-all"
+            >
+              <div
+                class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+              >
+                <i class="fas fa-code-commit text-6xl text-[#8FE3FF]"></i>
+              </div>
+              <h3
+                class="text-gray-400 text-sm font-bold uppercase tracking-wider mb-2"
+              >
+                Total Commits
+              </h3>
+              <input
+                type="number"
+                id="stat-commits"
+                class="bg-transparent text-5xl font-bold text-white border-none p-0 focus:ring-0 w-full"
+                value="0"
+              />
+              <p class="text-xs text-[#8FE3FF] mt-2">Manual Override</p>
+            </div>
+            <!-- Hours -->
+            <div
+              class="glass-panel p-6 rounded-2xl relative overflow-hidden group hover:border-purple-400/50 transition-all"
+            >
+              <div
+                class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+              >
+                <i class="fas fa-clock text-6xl text-purple-400"></i>
+              </div>
+              <h3
+                class="text-gray-400 text-sm font-bold uppercase tracking-wider mb-2"
+              >
+                Hours Coded
+              </h3>
+              <input
+                type="number"
+                id="stat-hours"
+                class="bg-transparent text-5xl font-bold text-white border-none p-0 focus:ring-0 w-full"
+                value="0"
+              />
+              <p class="text-xs text-purple-400 mt-2">Estimated Total</p>
+            </div>
+            <!-- Coffee -->
+            <div
+              class="glass-panel p-6 rounded-2xl relative overflow-hidden group hover:border-[#FF9900]/50 transition-all"
+            >
+              <div
+                class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+              >
+                <i class="fas fa-mug-hot text-6xl text-[#FF9900]"></i>
+              </div>
+              <h3
+                class="text-gray-400 text-sm font-bold uppercase tracking-wider mb-2"
+              >
+                Coffee Cups
+              </h3>
+              <input
+                type="number"
+                id="stat-coffee"
+                class="bg-transparent text-5xl font-bold text-white border-none p-0 focus:ring-0 w-full"
+                value="0"
+              />
+              <p class="text-xs text-[#FF9900] mt-2">Fuel Consumed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Editor -->
+        <div id="section-content" class="hidden space-y-8">
+          <div class="glass-panel p-6 rounded-2xl">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="text-xl font-bold text-white">
+                <i class="fas fa-briefcase text-[#8FE3FF] mr-2"></i> Experience
+              </h3>
+              <button
+                onclick="addExperience()"
+                class="text-sm bg-[#8FE3FF]/10 hover:bg-[#8FE3FF]/20 text-[#8FE3FF] px-4 py-2 rounded-lg border border-[#8FE3FF]/30 transition-all"
+              >
+                <i class="fas fa-plus mr-1"></i> Add Role
+              </button>
+            </div>
+            <div id="experience-editor" class="space-y-6">
+              <!-- Injected JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications Editor -->
+        <div id="section-certs" class="hidden space-y-8">
+          <div class="glass-panel p-6 rounded-2xl">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="text-xl font-bold text-white">
+                <i class="fas fa-certificate text-[#8FE3FF] mr-2"></i>
+                Certifications
+              </h3>
+              <button
+                onclick="addCertification()"
+                class="text-sm bg-[#8FE3FF]/10 hover:bg-[#8FE3FF]/20 text-[#8FE3FF] px-4 py-2 rounded-lg border border-[#8FE3FF]/30 transition-all"
+              >
+                <i class="fas fa-plus mr-1"></i> Add Cert
+              </button>
+            </div>
+            <div id="certs-editor" class="grid md:grid-cols-2 gap-6">
+              <!-- Injected JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Repos -->
+        <div id="section-repos" class="hidden">
+          <div class="glass-panel p-6 rounded-2xl">
+            <h3 class="text-xl font-bold text-white mb-6">
+              <i class="fab fa-github text-white mr-2"></i> Repository
+              Visibility
+            </h3>
+            <div
+              id="repo-list"
+              class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+            >
+              <!-- Injected JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // --- State ---
+      let githubToken = localStorage.getItem("gh_token");
+      let currentSha = "";
+
+      // --- Init ---
+      if (githubToken) {
+        document.getElementById("login-screen").classList.add("hidden");
+        document.getElementById("main-app").classList.remove("hidden");
+        document.querySelector("aside").classList.remove("hidden");
+        document.querySelector("aside").classList.add("flex");
+        initDashboard();
+      }
+
+      // --- Auth ---
+      async function verifyToken() {
+        const token = document.getElementById("token-input").value;
+        try {
+          const res = await fetch("https://api.github.com/user", {
+            headers: { Authorization: `token ${token}` },
+          });
+          if (res.ok) {
+            localStorage.setItem("gh_token", token);
+            location.reload();
+          } else {
+            throw new Error("Invalid Token");
+          }
+        } catch (e) {
+          document.getElementById("login-error").classList.remove("hidden");
+        }
+      }
+
+      function logout() {
+        localStorage.removeItem("gh_token");
+        location.reload();
+      }
+
+      // --- Navigation ---
+      function showSection(id) {
+        // Update UI
+        document
+          .querySelectorAll("#content-area > div")
+          .forEach((el) => el.classList.add("hidden"));
+        document.getElementById(`section-${id}`).classList.remove("hidden");
+
+        // Update Nav
+        document
+          .querySelectorAll(".nav-btn")
+          .forEach((btn) => btn.classList.remove("active-nav"));
+        event.currentTarget.classList.add("active-nav");
+
+        // Update Title
+        const titles = {
+          dashboard: "Dashboard",
+          content: "Experience Editor",
+          certs: "Certifications Manager",
+          repos: "Repository Manager",
+        };
+        document.getElementById("page-title").innerText = titles[id];
+      }
+
+      // --- Data Loading ---
+      async function initDashboard() {
+        // Load Stats
+        if (portfolioData.stats) {
+          document.getElementById("stat-commits").value =
+            portfolioData.stats.totalCommits;
+          document.getElementById("stat-hours").value =
+            portfolioData.stats.hoursCoded;
+          document.getElementById("stat-coffee").value =
+            portfolioData.stats.coffeeCups;
+        }
+
+        // Load Content
+        renderExperienceEditor();
+        renderCertsEditor();
+
+        // Load Repos & Status
+        await fetchRepos();
+        await fetchDeploymentStatus();
+        await fetchFileSha();
+      }
+
+      async function fetchDeploymentStatus() {
+        try {
+          const res = await fetch(
+            `https://api.github.com/repos/${portfolioData.githubUsername}/Portfolio/pages/builds/latest`,
+            {
+              headers: { Authorization: `token ${githubToken}` },
+            }
+          );
+          const data = await res.json();
+
+          const badge = document.getElementById("deploy-status-badge");
+          const time = document.getElementById("deploy-time");
+          const commit = document.getElementById("deploy-commit");
+
+          if (data.status === "built") {
+            badge.className =
+              "px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold border border-green-500/30";
+            badge.innerText = "Live & Healthy";
+          } else {
+            badge.className =
+              "px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-xs font-bold border border-yellow-500/30";
+            badge.innerText = data.status || "Unknown";
+          }
+
+          time.innerText = new Date(data.updated_at).toLocaleString();
+          commit.innerText = data.commit.substring(0, 7);
+        } catch (e) {
+          console.warn("Could not fetch deployment status");
+        }
+      }
+
+      async function fetchRepos() {
+        const list = document.getElementById("repo-list");
+        list.innerHTML =
+          '<div class="col-span-full text-center animate-pulse">Loading Repos...</div>';
+
+        try {
+          const res = await fetch(
+            `https://api.github.com/users/${portfolioData.githubUsername}/repos?per_page=100`
+          );
+          const repos = await res.json();
+
+          list.innerHTML = "";
+          repos.forEach((repo) => {
+            const isHidden = portfolioData.hiddenRepos.includes(repo.name);
+            const div = document.createElement("div");
+            div.className = `p-4 rounded-xl border transition-all cursor-pointer flex items-center justify-between group ${
+              isHidden
+                ? "bg-[#1E2A38]/50 border-red-500/30 opacity-60"
+                : "bg-[#1E2A38] border-green-500/30 hover:bg-[#1E2A38]/80"
+            }`;
+            div.onclick = (e) => {
+              if (e.target.tagName !== "INPUT") toggleRepo(repo.name);
+            };
+
+            div.innerHTML = `
+                        <div class="flex items-center gap-3 overflow-hidden">
+                            <i class="fab fa-github text-xl ${
+                              isHidden ? "text-gray-500" : "text-white"
+                            }"></i>
+                            <span class="font-bold text-sm truncate text-gray-300 group-hover:text-white transition-colors">${
+                              repo.name
+                            }</span>
+                        </div>
+                        <div class="w-2 h-2 rounded-full ${
+                          isHidden ? "bg-red-500" : "bg-green-500"
+                        } shadow-[0_0_8px_currentColor]"></div>
+                    `;
+            list.appendChild(div);
+          });
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      function toggleRepo(name) {
+        const index = portfolioData.hiddenRepos.indexOf(name);
+        if (index === -1) {
+          portfolioData.hiddenRepos.push(name);
+        } else {
+          portfolioData.hiddenRepos.splice(index, 1);
+        }
+        fetchRepos();
+      }
+
+      // --- Experience Editor ---
+      function renderExperienceEditor() {
+        const container = document.getElementById("experience-editor");
+        container.innerHTML = "";
+        portfolioData.experience.forEach((job, index) => {
+          const div = document.createElement("div");
+          div.className =
+            "bg-[#0F172A]/50 p-6 rounded-xl border border-white/5 hover:border-white/10 transition-all";
+          div.innerHTML = `
+                    <div class="flex justify-between mb-4">
+                        <h4 class="font-bold text-[#8FE3FF]">Position ${
+                          index + 1
+                        }</h4>
+                        <button onclick="removeExperience(${index})" class="text-red-400 hover:text-red-300 text-xs bg-red-500/10 px-2 py-1 rounded"><i class="fas fa-trash mr-1"></i> Remove</button>
+                    </div>
+                    <div class="grid gap-4">
+                        <input type="text" class="input-field" value="${
+                          job.title
+                        }" onchange="updateExp(${index}, 'title', this.value)" placeholder="Job Title">
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" class="input-field" value="${
+                              job.company
+                            }" onchange="updateExp(${index}, 'company', this.value)" placeholder="Company">
+                            <input type="text" class="input-field" value="${
+                              job.duration
+                            }" onchange="updateExp(${index}, 'duration', this.value)" placeholder="Duration">
+                        </div>
+                        <textarea class="input-field" rows="3" onchange="updateExp(${index}, 'description', this.value)" placeholder="Description (one per line)">${job.description.join(
+            "\n"
+          )}</textarea>
+                    </div>
+                `;
+          container.appendChild(div);
+        });
+      }
+
+      function updateExp(index, field, value) {
+        if (field === "description") {
+          portfolioData.experience[index][field] = value
+            .split("\n")
+            .filter((line) => line.trim() !== "");
+        } else {
+          portfolioData.experience[index][field] = value;
+        }
+      }
+
+      function addExperience() {
+        portfolioData.experience.push({
+          title: "",
+          company: "",
+          duration: "",
+          description: [],
+        });
+        renderExperienceEditor();
+      }
+
+      function removeExperience(index) {
+        portfolioData.experience.splice(index, 1);
+        renderExperienceEditor();
+      }
+
+      // --- Certifications Editor ---
+      function renderCertsEditor() {
+        const container = document.getElementById("certs-editor");
+        container.innerHTML = "";
+        portfolioData.certifications.forEach((cert, index) => {
+          const div = document.createElement("div");
+          div.className =
+            "bg-[#0F172A]/50 p-6 rounded-xl border border-white/5 hover:border-white/10 transition-all relative";
+          div.innerHTML = `
+                    <button onclick="removeCert(${index})" class="absolute top-4 right-4 text-red-400 hover:text-red-300 text-xs"><i class="fas fa-trash"></i></button>
+                    <h4 class="font-bold text-[#8FE3FF] mb-4">Certificate ${
+                      index + 1
+                    }</h4>
+                    <div class="space-y-3">
+                        <input type="text" class="input-field" value="${
+                          cert.name
+                        }" onchange="updateCert(${index}, 'name', this.value)" placeholder="Cert Name">
+                        <input type="text" class="input-field" value="${
+                          cert.issuer
+                        }" onchange="updateCert(${index}, 'issuer', this.value)" placeholder="Issuer">
+                        <input type="text" class="input-field" value="${
+                          cert.date
+                        }" onchange="updateCert(${index}, 'date', this.value)" placeholder="Date">
+                    </div>
+                `;
+          container.appendChild(div);
+        });
+      }
+
+      function updateCert(index, field, value) {
+        portfolioData.certifications[index][field] = value;
+      }
+
+      function addCert() {
+        portfolioData.certifications.push({
+          name: "",
+          issuer: "",
+          date: "",
+          link: "#",
+        });
+        renderCertsEditor();
+      }
+
+      function removeCert(index) {
+        portfolioData.certifications.splice(index, 1);
+        renderCertsEditor();
+      }
+
+      // --- Saving Logic (GitHub API) ---
+      async function fetchFileSha() {
+        try {
+          const res = await fetch(
+            `https://api.github.com/repos/${portfolioData.githubUsername}/Portfolio/contents/data.js`
+          );
+          const data = await res.json();
+          currentSha = data.sha;
+        } catch (e) {
+          console.warn("Could not fetch SHA. Is the repo name correct?");
+        }
+      }
+
+      async function saveChanges() {
+        const btn = document.getElementById("save-btn");
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Saving...';
+        btn.disabled = true;
+
+        // Update Stats
+        portfolioData.stats = {
+          totalCommits: parseInt(document.getElementById("stat-commits").value),
+          hoursCoded: parseInt(document.getElementById("stat-hours").value),
+          coffeeCups: parseInt(document.getElementById("stat-coffee").value),
+        };
+
+        // Generate File Content
+        const fileContent = `// Portfolio Data Store\n// Updated via Admin Panel\n\nconst portfolioData = ${JSON.stringify(
+          portfolioData,
+          null,
+          2
+        )};\n\nif (typeof module !== "undefined") {\n  module.exports = portfolioData;\n}`;
+
+        // Encode to Base64
+        const contentEncoded = btoa(unescape(encodeURIComponent(fileContent)));
+
+        try {
+          const res = await fetch(
+            `https://api.github.com/repos/${portfolioData.githubUsername}/Portfolio/contents/data.js`,
+            {
+              method: "PUT",
+              headers: {
+                Authorization: `token ${localStorage.getItem("gh_token")}`,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                message: "Update portfolio data via Admin Panel",
+                content: contentEncoded,
+                sha: currentSha,
+              }),
+            }
+          );
+
+          if (res.ok) {
+            const data = await res.json();
+            currentSha = data.content.sha;
+            alert(
+              "Success! Changes saved to GitHub. Site will update in ~2 mins."
+            );
+          } else {
+            throw new Error("GitHub API Error");
+          }
+        } catch (e) {
+          alert("Error saving to GitHub. Check permissions or console.");
+          console.error(e);
+        } finally {
+          btn.innerHTML = '<i class="fas fa-save mr-2"></i> Save Changes';
+          btn.disabled = false;
+        }
+      }
+    </script>
+  </body>
+</html>

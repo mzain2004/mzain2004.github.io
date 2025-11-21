@@ -1,0 +1,24 @@
+IMPORTANT: CV Download Setup Required
+=======================================
+
+The "Download CV" button has been configured to download your resume.
+
+ACTION REQUIRED:
+1. Create or export your resume as a PDF file
+2. Name it exactly: resume.pdf
+3. Place it in the same folder as index.html (Portfolio folder)
+
+File path should be:
+C:\Users\M. Zain\Downloads\Portfolio\resume.pdf
+
+Once you add the resume.pdf file, the Download CV button will work automatically!
+
+The button is configured to:
+- Link to: resume.pdf
+- Download as: Muhammad_Zain_Resume.pdf
+
+---
+If you don't have a resume PDF yet, you can:
+- Create one using Canva, Google Docs, or Microsoft Word
+- Export as PDF
+- Save it in the Portfolio folder
